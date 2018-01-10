@@ -1,0 +1,112 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix mood: <http://semantic-audio.github.io/mood/mood-schema.n3#> .
+@prefix muto: <http://purl.org/muto/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mood:TagType a owl:Class ;
+    rdfs:label "TagType" ;
+    rdfs:comment "tag type" .
+
+mood:album_title a owl:ObjectProperty ;
+    rdfs:label "album_title" ;
+    rdfs:comment "album title" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:string .
+
+mood:arousal a owl:ObjectProperty ;
+    rdfs:label "arousal" ;
+    rdfs:comment "arousal coordinate between -1.0 and 1.0" ;
+    rdfs:domain mood:Coordinates ;
+    rdfs:range xsd:decimal .
+
+mood:artist_name a owl:ObjectProperty ;
+    rdfs:label "artist_name" ;
+    rdfs:comment "artist name" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:string .
+
+mood:configuration a owl:ObjectProperty ;
+    rdfs:label "configuration" ;
+    rdfs:comment "configuration of track mood coordinates" ;
+    rdfs:domain mood:Coordinates ;
+    rdfs:range mood:Configuration .
+
+mood:coordinates a owl:ObjectProperty ;
+    rdfs:label "coordinates" ;
+    rdfs:comment "mood coordinates" ;
+    rdfs:domain mo:Track ;
+    rdfs:range mood:Coordinates .
+
+mood:dominance a owl:ObjectProperty ;
+    rdfs:label "dominance" ;
+    rdfs:comment "dominance coordinate between -1.0 and 1.0" ;
+    rdfs:domain mood:Coordinates ;
+    rdfs:range xsd:decimal .
+
+mood:filename a owl:ObjectProperty ;
+    rdfs:label "filename" ;
+    rdfs:comment "audio file name" ;
+    rdfs:domain mo:AudioFile ;
+    rdfs:range xsd:string .
+
+mood:ilm_id a owl:ObjectProperty ;
+    rdfs:label "ilm_id" ;
+    rdfs:comment "ilm track id" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:string .
+
+mood:lastfm_id a owl:ObjectProperty ;
+    rdfs:label "lastfm_id" ;
+    rdfs:comment "last fm track id" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:integer .
+
+mood:reference a owl:ObjectProperty ;
+    rdfs:label "reference" ;
+    rdfs:comment "configuration reference" ;
+    rdfs:domain mood:Configuration ;
+    rdfs:range xsd:string .
+
+mood:release_year a owl:ObjectProperty ;
+    rdfs:label "release_year" ;
+    rdfs:comment "release year" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:string .
+
+mood:song_title a owl:ObjectProperty ;
+    rdfs:label "song_title" ;
+    rdfs:comment "song title" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:string .
+
+mood:tagging a owl:ObjectProperty ;
+    rdfs:label "tagging" ;
+    rdfs:comment "muto tagging" ;
+    rdfs:domain mo:Track ;
+    rdfs:range muto:Tagging .
+
+mood:track_duration a owl:ObjectProperty ;
+    rdfs:label "track_duration" ;
+    rdfs:comment "track duration" ;
+    rdfs:domain mo:Track ;
+    rdfs:range xsd:string .
+
+mood:valence a owl:ObjectProperty ;
+    rdfs:label "valence" ;
+    rdfs:comment "valence coordinate between -1.0 and 1.0" ;
+    rdfs:domain mood:Coordinates ;
+    rdfs:range xsd:decimal .
+
+mood:Configuration a owl:Class ;
+    rdfs:label "Configuration" ;
+    rdfs:comment "mood coordinates configuration" .
+
+mood:Coordinates a owl:Class ;
+    rdfs:label "Coordinates" ;
+    rdfs:comment "mood coordinates" .
+
